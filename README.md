@@ -23,7 +23,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 ### Key Concepts
 
 - **MCP Servers**: Programs that expose data and functionality through the MCP protocol
-- **MCP Clients**: Applications (like Claude Desktop, IDEs) that connect to MCP servers
+- **MCP Clients**: Applications that connect to MCP servers (e.g., Claude Desktop, Continue.dev, custom implementations)
 - **Resources**: Data sources that servers make available to clients
 - **Tools**: Functions that LLMs can invoke through the protocol
 - **Prompts**: Reusable prompt templates exposed by servers
@@ -41,12 +41,15 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 - Node.js 18+ or Python 3.10+
 - Basic understanding of REST APIs and JSON
-- An MCP-compatible client (Claude Desktop recommended for beginners)
+- An MCP-compatible client for testing (see [Client Implementations](#client-implementations))
 
 ### 5-Minute Setup
 
-1. **Install Claude Desktop** (easiest way to test MCP servers)
-   - Download from [claude.ai/download](https://claude.ai/download)
+1. **Choose an MCP client** (to test your servers)
+   - **Claude Desktop**: User-friendly, download from [claude.ai/download](https://claude.ai/download)
+   - **Continue.dev**: IDE extension for VS Code/JetBrains
+   - **MCP Inspector**: CLI testing tool - `npx @modelcontextprotocol/inspector`
+   - **Custom client**: Build your own using the MCP SDK
 
 2. **Create your first MCP server** (choose one):
 
@@ -120,10 +123,16 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
    await server.connect(transport);
    ```
 
-3. **Configure Claude Desktop** to use your server:
+3. **Test your server** using one of these methods:
+
+   **Option A: Using MCP Inspector (CLI tool)**
+   ```bash
+   npx @modelcontextprotocol/inspector python /path/to/server.py
+   ```
+
+   **Option B: Using Claude Desktop**
 
    Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
-
    ```json
    {
      "mcpServers": {
@@ -134,8 +143,26 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
      }
    }
    ```
+   Restart Claude Desktop to load the server.
 
-4. **Restart Claude Desktop** and test your server!
+   **Option C: Using Continue.dev**
+
+   Add to your Continue config (`~/.continue/config.json`):
+   ```json
+   {
+     "mcpServers": [
+       {
+         "name": "my-first-server",
+         "command": "python",
+         "args": ["/path/to/server.py"]
+       }
+     ]
+   }
+   ```
+
+   **Option D: Build your own client**
+
+   Use the MCP SDK to create a custom client - see [Client Development Guide](https://modelcontextprotocol.io/docs/building-clients)
 
 ## Official Documentation
 
