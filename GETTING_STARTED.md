@@ -186,17 +186,34 @@ npx tsc hello_server.ts
 node hello_server.js
 ```
 
-## Step 4: Connect to Claude Desktop (5 minutes)
+## Step 4: Connect to an MCP Client (5 minutes)
 
-### Find Your Config File
+Choose one of the following methods to test your server:
 
-**macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
-**Linux**: `~/.config/Claude/claude_desktop_config.json`
+### Option A: MCP Inspector (Recommended for Learning)
 
-### Edit the Config
+The fastest way to test your server:
 
-**For Python:**
+```bash
+npx @modelcontextprotocol/inspector python /absolute/path/to/hello_server.py
+```
+
+This opens an interactive web interface where you can:
+- See available tools
+- Call tools with parameters
+- View responses in real-time
+- Debug protocol messages
+
+### Option B: Claude Desktop
+
+**Find your config file:**
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+**Edit the config:**
+
+For Python:
 ```json
 {
   "mcpServers": {
@@ -208,7 +225,7 @@ node hello_server.js
 }
 ```
 
-**For TypeScript/Node:**
+For TypeScript/Node:
 ```json
 {
   "mcpServers": {
@@ -220,18 +237,52 @@ node hello_server.js
 }
 ```
 
-**Important**:
+**Important:**
 - Use ABSOLUTE paths, not relative
 - Use forward slashes even on Windows: `C:/Users/...`
-- If using Python venv, point to the venv's Python: `/path/to/venv/bin/python`
+- If using Python venv, point to venv's Python: `/path/to/venv/bin/python`
 
-### Restart Claude Desktop
+**Restart Claude Desktop** completely for changes to take effect.
 
-Completely quit and restart Claude Desktop for changes to take effect.
+### Option C: Continue.dev
+
+Add to `~/.continue/config.json`:
+
+```json
+{
+  "mcpServers": [
+    {
+      "name": "hello-mcp",
+      "command": "python",
+      "args": ["/absolute/path/to/hello_server.py"]
+    }
+  ]
+}
+```
+
+Restart VS Code/JetBrains after configuration.
+
+### Option D: Manual Testing (CLI)
+
+Test the protocol directly:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | python hello_server.py
+```
 
 ## Step 5: Test It! (5 minutes)
 
-Open Claude Desktop and try:
+### Using MCP Inspector
+
+1. Open the inspector (from Step 4A)
+2. Click on "say_hello" tool
+3. Enter a name in the parameter field
+4. Click "Call Tool"
+5. See the response: "Hello, [name]! 👋"
+
+### Using Claude Desktop
+
+Open Claude Desktop and ask:
 
 ```
 Can you use the say_hello tool to greet John?
@@ -239,13 +290,25 @@ Can you use the say_hello tool to greet John?
 
 You should see Claude use your tool and return "Hello, John! 👋"
 
-**If it doesn't work:**
-1. Check Claude Desktop logs:
-   - macOS: `~/Library/Logs/Claude/`
-   - Windows: `%APPDATA%\Claude\logs\`
-2. Verify absolute paths in config
-3. Make sure server file is executable
-4. Test server manually: `python hello_server.py` (should wait for input)
+### Using Continue.dev
+
+In your IDE, open Continue and ask:
+
+```
+Use the say_hello tool to greet Alice
+```
+
+### Troubleshooting
+
+**Server not detected:**
+1. Verify absolute paths in config
+2. Test server manually: `python hello_server.py` (should wait for input)
+3. Check logs:
+   - Claude Desktop: `~/Library/Logs/Claude/` (macOS) or `%APPDATA%\Claude\logs\` (Windows)
+   - MCP Inspector: shows errors in the UI
+   - Continue.dev: Check VS Code output panel
+4. Ensure server file is executable (Unix): `chmod +x hello_server.py`
+5. Verify dependencies installed: `pip list | grep mcp` or `npm list`
 
 ## Next Steps
 
