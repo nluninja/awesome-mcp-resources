@@ -6,8 +6,11 @@ A practical, hands-on guide to get you up and running with Model Context Protoco
 
 Before you begin, make sure you have:
 
-- **Claude Desktop** installed ([download here](https://claude.ai/download))
 - **Python 3.10+** OR **Node.js 18+** (depending on your preference)
+- **An MCP Client** for testing (choose one):
+  - [Claude Desktop](https://claude.ai/download) - Easiest for beginners
+  - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) - CLI testing tool
+  - [Continue.dev](https://continue.dev) - VS Code/JetBrains extension
 - Basic command line knowledge
 - A text editor (VS Code, Sublime, etc.)
 
@@ -20,7 +23,7 @@ MCP (Model Context Protocol) is like a USB port for AI applications:
 
 **Key Terms:**
 - **MCP Server**: A program that exposes tools/data (you'll build this)
-- **MCP Client**: An app that uses those tools (like Claude Desktop)
+- **MCP Client**: An app that uses those tools (e.g., Claude Desktop, Continue.dev, MCP Inspector)
 - **Tool**: A function the AI can call (e.g., "search_web", "read_file")
 - **Resource**: Data the AI can read (e.g., files, database records)
 
