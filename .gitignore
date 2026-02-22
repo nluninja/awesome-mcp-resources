@@ -18,3 +18,26 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
+
+# Internal documentation
+SUMMARY.txt
+UPDATE_SUMMARY.md
+*_SUMMARY.md
+
+# Node modules
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
