@@ -1,6 +1,18 @@
 # Awesome MCP Resources
 
-A curated list of resources for learning and working with Model Context Protocol (MCP) - a practical guide for students and developers to get started quickly.
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue)](https://modelcontextprotocol.io)
+[![GitHub](https://img.shields.io/badge/GitHub-awesome--mcp--resources-181717?logo=github)](https://github.com/yourusername/awesome-mcp-resources)
+
+> A curated list of resources for learning and working with Model Context Protocol (MCP) - a practical guide for students and developers to get started quickly.
+
+## 🚀 Quick Navigation
+
+- **New to MCP?** → Start with [Getting Started Guide](GETTING_STARTED.md) (30 minutes)
+- **Want to see code?** → Browse [Examples](examples/)
+- **Need quick reference?** → Check [Quick Reference](QUICKREF.md)
+- **Looking for resources?** → Keep reading below ⬇️
 
 ## Table of Contents
 
