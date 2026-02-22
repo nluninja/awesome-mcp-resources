@@ -400,29 +400,51 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 ### Forums & Discussion
 
-- [MCP Discord Server](https://discord.gg/anthropic) - Active community chat
-- [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) - Technical discussions
-- [Reddit r/ClaudeAI](https://reddit.com/r/ClaudeAI) - Community forum
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/model-context-protocol) - Q&A tagged with MCP
+- **[Anthropic Discord](https://discord.gg/anthropic)** - Official Discord server with #mcp channel
+- **[MCP GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions)** - Technical discussions and Q&A
+- **[Reddit r/ClaudeAI](https://reddit.com/r/ClaudeAI)** - Community forum with MCP discussions
+- **[Reddit r/ModelContextProtocol](https://reddit.com/r/ModelContextProtocol)** - Dedicated MCP subreddit
+- **[Stack Overflow - MCP Tag](https://stackoverflow.com/questions/tagged/model-context-protocol)** - Technical Q&A
+
+### Conferences & Talks
+
+- **[AI Engineer Summit](https://www.ai.engineer/)** - Annual conference featuring MCP presentations
+- **[Anthropic MCP Launch Event](https://www.anthropic.com/news/model-context-protocol)** - Original announcement (November 2024)
+- **[GitHub Universe](https://githubuniverse.com/)** - Developer conference with AI/LLM tracks
+- **[PyCon](https://pycon.org/)** - Python conference with AI integration talks
+- **[JSConf](https://jsconf.com/)** - JavaScript conference featuring AI tooling
+- **Conference recordings on [YouTube](https://www.youtube.com/results?search_query=model+context+protocol+conference)**
 
 ### Blogs & Articles
 
-- [Anthropic Blog](https://www.anthropic.com/news) - Official announcements
-- Community blog posts and tutorials
-- Case studies and implementation stories
+- **[Anthropic Blog](https://www.anthropic.com/news)** - Official announcements and updates
+- **[MCP on Dev.to](https://dev.to/t/mcp)** - Community articles and tutorials
+- **[MCP on Medium](https://medium.com/search?q=model%20context%20protocol)** - Technical deep dives
+- **[Hacker News - MCP discussions](https://hn.algolia.com/?q=model+context+protocol)** - Community discussions
+- **[Simon Willison's Blog](https://simonwillison.net/)** - AI and MCP insights
 
 ### Social Media
 
-- [Twitter/X #ModelContextProtocol](https://twitter.com/search?q=%23ModelContextProtocol)
-- LinkedIn groups and discussions
-- YouTube channels covering MCP
+- **[Twitter/X #ModelContextProtocol](https://twitter.com/search?q=%23ModelContextProtocol)** - Latest updates and discussions
+- **[Twitter/X @AnthropicAI](https://twitter.com/AnthropicAI)** - Official Anthropic account
+- **[LinkedIn MCP Group](https://www.linkedin.com/search/results/groups/?keywords=model%20context%20protocol)** - Professional network
+- **[YouTube MCP Channel](https://www.youtube.com/results?search_query=model+context+protocol)** - Video tutorials and talks
+
+### Open Source Community
+
+- **[MCP GitHub Organization](https://github.com/modelcontextprotocol)** - Official repositories
+  - [Specification](https://github.com/modelcontextprotocol/specification) - Protocol spec
+  - [SDKs](https://github.com/modelcontextprotocol/sdk) - Official SDKs
+  - [Servers](https://github.com/modelcontextprotocol/servers) - Reference implementations
+- **[Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)** - Community server collection
+- **[MCP Examples](https://github.com/topics/mcp-server)** - GitHub topic for MCP servers
 
 ### Contributing
 
-- [Contributing Guide](https://github.com/modelcontextprotocol/specification/blob/main/CONTRIBUTING.md)
-- How to submit new servers
-- Documentation improvements
-- Bug reports and feature requests
+- **[Contributing Guide](https://github.com/modelcontextprotocol/specification/blob/main/CONTRIBUTING.md)** - How to contribute
+- **[Good First Issues](https://github.com/search?q=org%3Amodelcontextprotocol+label%3A%22good+first+issue%22&type=issues)** - Beginner-friendly contributions
+- **[Documentation](https://github.com/modelcontextprotocol/specification/tree/main/docs)** - Help improve docs
+- **[Server Registry](https://github.com/modelcontextprotocol/servers/discussions)** - Submit your servers
 
 ## Best Practices
 
