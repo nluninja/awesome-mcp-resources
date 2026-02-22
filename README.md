@@ -351,35 +351,104 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 ## Client Implementations
 
+MCP clients connect to MCP servers and enable LLMs to use the exposed tools and resources.
+
 ### Desktop Applications
 
 - **[Claude Desktop](https://claude.ai/download)** - Official Anthropic client
+  - Platform: macOS, Windows
   - Native MCP support
-  - Easy configuration
-  - Best for beginners
+  - Simple JSON configuration
+  - Best for: Beginners, general use
+  - [Setup Guide](https://modelcontextprotocol.io/quickstart)
 
-- **[Continue.dev](https://continue.dev)** - VS Code/JetBrains extension
+- **[Continue.dev](https://continue.dev)** - IDE extension
+  - Platform: VS Code, JetBrains IDEs
   - MCP server integration
-  - IDE-native experience
-  - Developer-focused
-
-### Web Applications
-
-- Custom web clients using MCP SDK
-- Browser extension implementations
-- Cloud-based MCP clients
+  - Code-aware context
+  - Best for: Developers, coding workflows
+  - [MCP Configuration](https://docs.continue.dev/features/mcp)
 
 ### CLI Tools
 
-- [mcp-cli](https://github.com/modelcontextprotocol/cli) - Command-line MCP client
-- Custom CLI implementations
-- Testing and debugging tools
+- **[MCP Inspector](https://github.com/modelcontextprotocol/inspector)** - Debugging tool
+  - Test and debug MCP servers
+  - Interactive interface
+  - Protocol inspection
+  - Best for: Server development
+  - Install: `npx @modelcontextprotocol/inspector`
+
+- **Custom CLI clients** - Build your own
+  - Use MCP SDK
+  - Scriptable automation
+  - Custom workflows
+
+### Web & Browser
+
+- **Web-based clients** - Using MCP SDK
+  - Browser-based interfaces
+  - Cloud-hosted clients
+  - Custom dashboards
+
+- **Browser extensions** - Community implementations
+  - Direct browser integration
+  - Bookmarklet tools
+
+### Agent Frameworks
+
+- **[LangChain](https://www.langchain.com/)** - MCP integration
+  - Use MCP servers as LangChain tools
+  - Agent orchestration
+  - [Integration guide](https://python.langchain.com/docs/integrations/tools/)
+
+- **[LlamaIndex](https://www.llamaindex.ai/)** - Data framework
+  - MCP as data sources
+  - Retrieval augmentation
+
+- **[AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)** - Autonomous agents
+  - MCP tool integration
+  - Multi-step reasoning
 
 ### Building Your Own Client
 
-- [Client Development Guide](https://modelcontextprotocol.io/docs/building-clients)
-- [Client SDK](https://github.com/modelcontextprotocol/sdk)
-- Example client implementations
+**Why build a custom client:**
+- Integrate MCP into existing applications
+- Create specialized workflows
+- Custom UI/UX requirements
+- Specific security/compliance needs
+
+**Resources:**
+- **[Client Development Guide](https://modelcontextprotocol.io/docs/building-clients)** - Official guide
+- **[TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)** - Client implementation
+- **[Python SDK](https://github.com/modelcontextprotocol/python-sdk)** - Python client tools
+- **[Example Clients](https://github.com/modelcontextprotocol/specification/tree/main/examples)** - Reference implementations
+
+**Basic client structure:**
+```typescript
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+
+const transport = new StdioClientTransport({
+  command: "python",
+  args: ["server.py"]
+});
+
+const client = new Client({
+  name: "my-client",
+  version: "1.0.0"
+});
+
+await client.connect(transport);
+
+// List available tools
+const tools = await client.listTools();
+
+// Call a tool
+const result = await client.callTool({
+  name: "tool_name",
+  arguments: { param: "value" }
+});
+```
 
 ## Tools & Libraries
 
