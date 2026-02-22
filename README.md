@@ -216,23 +216,40 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 ## Video Resources
 
-### Introductory Videos
+### Official Videos
 
-- [What is Model Context Protocol?](https://www.youtube.com/results?search_query=what+is+model+context+protocol) - 10-minute overview
-- [MCP Demo and Walkthrough](https://www.youtube.com/results?search_query=mcp+demo) - Live demonstration
-- [Building Your First MCP Server](https://www.youtube.com/results?search_query=building+mcp+server) - 30-minute tutorial
+- **[Anthropic MCP Announcement](https://www.youtube.com/c/anthropic-ai)** - Official launch video
+- **[MCP Documentation Videos](https://modelcontextprotocol.io)** - Official tutorials
 
-### Conference Talks
+### Conference Talks & Presentations
 
-- Anthropic's MCP Launch Presentation
-- MCP at AI Engineer Summit
-- Building AI Agents with MCP
+- **[AI Engineer Summit 2024](https://www.ai.engineer/summit)** - MCP integration talks
+  - Search: [AI Engineer + MCP on YouTube](https://www.youtube.com/results?search_query=AI+Engineer+Summit+Model+Context+Protocol)
+- **[GitHub Universe 2024](https://githubuniverse.com/)** - AI tooling presentations
+- **[PyCon Talks](https://www.youtube.com/@PyConUS)** - Python MCP implementations
+- **[JSConf Talks](https://www.youtube.com/results?search_query=jsconf+llm+integration)** - JavaScript AI integrations
+- **Conference Playlist**: [MCP Conference Talks](https://www.youtube.com/results?search_query=model+context+protocol+conference)
 
-### Community Tutorials
+### Tutorial Videos
 
-- Setting up MCP with Claude Desktop
-- MCP Server Development Tips
-- Real-world MCP Use Cases
+- **[What is Model Context Protocol?](https://www.youtube.com/results?search_query=what+is+model+context+protocol+tutorial)** - Introductory overviews
+- **[Building Your First MCP Server](https://www.youtube.com/results?search_query=building+mcp+server+tutorial)** - Step-by-step tutorials
+- **[MCP Server Development](https://www.youtube.com/results?search_query=mcp+server+development)** - Advanced techniques
+- **[MCP with Python](https://www.youtube.com/results?search_query=model+context+protocol+python)** - Python-specific tutorials
+- **[MCP with TypeScript](https://www.youtube.com/results?search_query=model+context+protocol+typescript)** - TypeScript implementations
+
+### Live Coding & Demos
+
+- **[MCP Live Coding Sessions](https://www.youtube.com/results?search_query=model+context+protocol+live+coding)**
+- **[Building AI Agents with MCP](https://www.youtube.com/results?search_query=building+ai+agents+mcp)**
+- **[MCP Integration Examples](https://www.youtube.com/results?search_query=mcp+integration+demo)**
+
+### Community Channels
+
+- **[Simon Willison](https://www.youtube.com/@simonw)** - AI and LLM content including MCP
+- **[Matt Pocock](https://www.youtube.com/@mattpocockuk)** - TypeScript and AI tooling
+- **[Fireship](https://www.youtube.com/@Fireship)** - Quick tech explainers
+- **[Theo - t3.gg](https://www.youtube.com/@t3dotgg)** - Web dev and AI
 
 ## Example Projects
 
@@ -502,30 +519,40 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 Common issues and solutions:
 
-1. **Server not appearing in Claude Desktop**
-   - Check configuration file syntax
-   - Verify file paths are absolute
-   - Restart Claude Desktop completely
-   - Check server logs for errors
+1. **Server not being detected by client**
+   - Check configuration file syntax (JSON must be valid)
+   - Verify file paths are absolute, not relative
+   - Restart your MCP client completely
+   - Check server logs for initialization errors
+   - Test with MCP Inspector: `npx @modelcontextprotocol/inspector python server.py`
 
 2. **Tools not being called**
-   - Verify tool descriptions are clear
-   - Check input schema is correct
-   - Test server independently
-   - Review Claude Desktop logs
+   - Verify tool descriptions are clear and specific
+   - Check input schema is valid JSON Schema
+   - Test server independently from command line
+   - Review client logs for errors
+   - Use MCP Inspector to debug tool definitions
 
 3. **Connection errors**
-   - Ensure server uses stdio correctly
-   - Check for port conflicts (if using HTTP)
+   - Ensure server uses correct transport (stdio is default)
+   - Check for port conflicts (if using HTTP/WebSocket)
    - Verify permissions on files/directories
-   - Test with MCP Inspector
+   - Confirm server process is actually running
+   - Test with: `echo '{"jsonrpc":"2.0","method":"initialize","id":1}' | python server.py`
+
+4. **Import/dependency errors**
+   - Verify all dependencies are installed
+   - Check virtual environment is activated (Python)
+   - Ensure Node.js modules are in node_modules (TypeScript)
+   - Review Python path / Node path configuration
 
 ### Resources for Help
 
-- Official documentation
-- GitHub issues for bug reports
-- Discord community for quick questions
-- Stack Overflow for detailed problems
+- **[Official Documentation](https://modelcontextprotocol.io)** - Comprehensive guides
+- **[GitHub Issues](https://github.com/modelcontextprotocol/specification/issues)** - Bug reports
+- **[Discord Community](https://discord.gg/anthropic)** - Quick questions (#mcp channel)
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/model-context-protocol)** - Detailed Q&A
+- **[GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions)** - Technical discussions
 
 ## Contributing to This List
 
