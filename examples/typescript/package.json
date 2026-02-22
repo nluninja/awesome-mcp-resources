@@ -1,0 +1,19 @@
+{
+  "name": "mcp-typescript-examples",
+  "version": "1.0.0",
+  "description": "TypeScript examples for Model Context Protocol",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start:simple": "node dist/simple-tool.js",
+    "start:calculator": "node dist/calculator.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
