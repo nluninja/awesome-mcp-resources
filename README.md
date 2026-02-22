@@ -27,6 +27,8 @@
 - [Tools & Libraries](#tools--libraries)
 - [Community Resources](#community-resources)
 - [Best Practices](#best-practices)
+- [FAQ](#frequently-asked-questions-faq)
+- [Getting Help](#getting-help)
 
 ## What is MCP?
 
@@ -593,6 +595,126 @@ const result = await client.callTool({
 - Set up monitoring and alerting
 - Plan for graceful shutdowns
 - Version your servers
+
+## Frequently Asked Questions (FAQ)
+
+### General Questions
+
+**Q: What is MCP and why should I use it?**
+A: MCP (Model Context Protocol) is an open standard that lets AI applications access external tools and data in a standardized way. Instead of building custom integrations for each AI app, you create one MCP server that works with any MCP-compatible client.
+
+**Q: Is MCP only for Claude/Anthropic?**
+A: No! While Anthropic created MCP, it's an open protocol. Any AI application can implement MCP support. Clients include Claude Desktop, Continue.dev, and custom implementations.
+
+**Q: Do I need to know AI/ML to use MCP?**
+A: No. If you can build a REST API or write basic Python/JavaScript, you can build MCP servers. MCP is about exposing functionality, not implementing AI.
+
+**Q: Is MCP production-ready?**
+A: Yes. MCP was released in November 2024 and is actively used in production. The protocol is stable, though it continues to evolve with community feedback.
+
+### Technical Questions
+
+**Q: What's the difference between a tool and a resource?**
+A: **Tools** are functions the AI can call (like "search_database" or "send_email"). **Resources** are data the AI can read (like files or API responses). Tools are for actions, resources are for information.
+
+**Q: Which programming language should I use?**
+A: Both Python and TypeScript have official SDKs. Choose based on your comfort:
+- **Python**: Great for data science, APIs, scripting
+- **TypeScript**: Great for web services, Node.js ecosystem
+
+**Q: Can I use MCP with other LLMs (OpenAI, Google, etc.)?**
+A: Yes! You can build a custom MCP client that connects to any LLM. The MCP SDK provides client libraries. Some agent frameworks (LangChain, LlamaIndex) are adding MCP support.
+
+**Q: How does MCP compare to function calling?**
+A: MCP standardizes the protocol for tool/function calling. Instead of each LLM having its own function calling format, MCP provides one protocol. You can implement MCP once and it works across clients.
+
+**Q: Do MCP servers need to run continuously?**
+A: Not necessarily. Many MCP servers run on-demand when called by a client using stdio transport. For HTTP/WebSocket transports, servers run continuously.
+
+### Getting Started
+
+**Q: What's the fastest way to test MCP?**
+A: Use MCP Inspector: `npx @modelcontextprotocol/inspector python your-server.py`
+It provides a web UI to test your server without setting up a full client.
+
+**Q: I'm getting "server not found" errors. What's wrong?**
+A: Check these:
+1. Use absolute paths in configuration, not relative
+2. Verify the server file exists and is executable
+3. Check that dependencies are installed
+4. Restart your MCP client after config changes
+5. Look at client logs for detailed error messages
+
+**Q: Can I use environment variables for API keys?**
+A: Yes! Most MCP clients let you set environment variables in the server configuration. Never hardcode secrets in your server code.
+
+**Q: How do I debug my MCP server?**
+A: Three approaches:
+1. **MCP Inspector**: Visual debugging tool
+2. **Manual testing**: Echo JSON-RPC messages to your server via command line
+3. **Logging**: Log to stderr (stdout is reserved for MCP protocol)
+
+### Development
+
+**Q: Can one server expose multiple tools?**
+A: Yes! A single MCP server can expose any number of tools, resources, and prompts. Group related functionality together.
+
+**Q: Can I call external APIs from my MCP server?**
+A: Absolutely. MCP servers are regular programs that can call APIs, access databases, read files, etc. They just expose this functionality through the MCP protocol.
+
+**Q: How do I handle authentication?**
+A: Several approaches:
+- Environment variables for API keys
+- OAuth flows (store tokens securely)
+- Read credentials from secure files
+- Prompt users via tool parameters (for user-specific auth)
+
+**Q: Can MCP servers call other MCP servers?**
+A: Yes, though it's uncommon. You can create a server that acts as a client to other servers, essentially creating a "meta-server" that orchestrates multiple services.
+
+**Q: What's the performance overhead of MCP?**
+A: Minimal. MCP uses JSON-RPC over stdio/HTTP, which is lightweight. The protocol itself adds negligible latency compared to the actual tool execution.
+
+### Deployment
+
+**Q: How do I deploy MCP servers in production?**
+A: Options include:
+- Systemd/PM2 for long-running servers
+- Docker containers
+- Cloud functions (for HTTP-based servers)
+- As part of your existing backend services
+
+**Q: Can multiple clients connect to one server?**
+A: With stdio transport, it's one-to-one (client launches server process). With HTTP/WebSocket transports, multiple clients can connect to a single server instance.
+
+**Q: How do I monitor MCP servers?**
+A: Standard application monitoring:
+- Log aggregation (stderr for server logs)
+- Health check endpoints (for HTTP servers)
+- Metrics collection (requests, latency, errors)
+- Process monitoring (for stdio servers)
+
+### Community & Support
+
+**Q: Where can I get help?**
+A:
+- [Discord](https://discord.gg/anthropic) - #mcp channel for quick questions
+- [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) - Technical discussions
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/model-context-protocol) - Detailed Q&A
+
+**Q: How can I contribute?**
+A: Many ways:
+- Build and share MCP servers
+- Improve documentation
+- Report bugs and suggest features
+- Help answer questions in community forums
+- Contribute to this resource list!
+
+**Q: Is there a registry of public MCP servers?**
+A: Yes:
+- [Official Servers](https://github.com/modelcontextprotocol/servers)
+- [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers)
+- GitHub topic: [mcp-server](https://github.com/topics/mcp-server)
 
 ## Getting Help
 
