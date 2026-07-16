@@ -348,6 +348,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 - [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Curated list of community servers
 - [MCP Server Registry](https://mcp-servers.org) - Searchable registry of public servers
+- [Xquik MCP Server](https://docs.xquik.com/mcp/overview) - Remote Streamable HTTP server for X/Twitter search, profile and follower data, monitoring, webhooks, and confirmation-gated publishing. OAuth 2.1. Not affiliated with X Corp.
 - Community Discord for sharing and discovering servers
 
 ### Building Your Own
