@@ -405,7 +405,7 @@ tail -f ~/Library/Logs/Claude/mcp*.log
 ## Resources
 
 - [Official Docs](https://modelcontextprotocol.io)
-- [Specification](https://spec.modelcontextprotocol.io)
+- [Specification](https://modelcontextprotocol.io/specification/latest)
 - [GitHub Org](https://github.com/modelcontextprotocol)
 - [Example Servers](https://github.com/modelcontextprotocol/servers)
 - [Discord Community](https://discord.gg/anthropic)
