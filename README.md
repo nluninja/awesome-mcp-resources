@@ -3,7 +3,7 @@
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
 [![MCP](https://img.shields.io/badge/MCP-Model_Context_Protocol-blue)](https://modelcontextprotocol.io)
-[![GitHub](https://img.shields.io/badge/GitHub-awesome--mcp--resources-181717?logo=github)](https://github.com/yourusername/awesome-mcp-resources)
+[![GitHub](https://img.shields.io/badge/GitHub-awesome--mcp--resources-181717?logo=github)](https://github.com/nluninja/awesome-mcp-resources)
 
 > A curated list of resources for learning and working with Model Context Protocol (MCP) - a practical guide for students and developers to get started quickly.
 
@@ -176,12 +176,12 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
    **Option D: Build your own client**
 
-   Use the MCP SDK to create a custom client - see [Client Development Guide](https://modelcontextprotocol.io/docs/building-clients)
+   Use the MCP SDK to create a custom client - see [Client Development Guide](https://modelcontextprotocol.io/docs/develop/build-client)
 
 ## Official Documentation
 
 - [MCP Documentation](https://modelcontextprotocol.io) - Official documentation and specification
-- [MCP Specification](https://spec.modelcontextprotocol.io) - Technical protocol specification
+- [MCP Specification](https://modelcontextprotocol.io/specification/latest) - Technical protocol specification
 - [Anthropic MCP Announcement](https://www.anthropic.com/news/model-context-protocol) - Original announcement blog post
 - [GitHub Repository](https://github.com/modelcontextprotocol) - Official MCP organization
 
@@ -194,7 +194,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
   - Covers basic concepts and first server
   - No prior MCP knowledge needed
 
-- **[Building Your First MCP Server](https://modelcontextprotocol.io/tutorials/building-mcp-server)** (1 hour)
+- **[Building Your First MCP Server](https://modelcontextprotocol.io/docs/develop/build-server)** (1 hour)
   - Step-by-step tutorial
   - Python and TypeScript examples
   - Includes testing and debugging
@@ -348,7 +348,10 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 - [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Curated list of community servers
 - [MCP Server Registry](https://mcp-servers.org) - Searchable registry of public servers
+- [Xquik MCP Server](https://docs.xquik.com/mcp/overview) - Remote Streamable HTTP server for X/Twitter search, profile and follower data, monitoring, webhooks, and confirmation-gated publishing. OAuth 2.1. Not affiliated with X Corp.
 - Community Discord for sharing and discovering servers
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ### Building Your Own
 
@@ -432,7 +435,7 @@ MCP clients connect to MCP servers and enable LLMs to use the exposed tools and 
 - Specific security/compliance needs
 
 **Resources:**
-- **[Client Development Guide](https://modelcontextprotocol.io/docs/building-clients)** - Official guide
+- **[Client Development Guide](https://modelcontextprotocol.io/docs/develop/build-client)** - Official guide
 - **[TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)** - Client implementation
 - **[Python SDK](https://github.com/modelcontextprotocol/python-sdk)** - Python client tools
 - **[Example Clients](https://github.com/modelcontextprotocol/specification/tree/main/examples)** - Reference implementations

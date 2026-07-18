@@ -43,7 +43,7 @@ Not sure where to start? This guide helps you navigate the resources based on yo
 
 ### Understand the MCP Protocol
 → [QUICKREF.md - Architecture Overview](QUICKREF.md#architecture-overview)
-→ [Official Specification](https://spec.modelcontextprotocol.io)
+→ [Official Specification](https://modelcontextprotocol.io/specification/latest)
 
 ## Document Purpose Summary
 
