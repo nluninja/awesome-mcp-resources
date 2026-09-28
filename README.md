@@ -349,6 +349,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 - [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Curated list of community servers
 - [MCP Server Registry](https://mcp-servers.org) - Searchable registry of public servers
 - Community Discord for sharing and discovering servers
+- [Statsnet MCP](https://github.com/usenetstate/statsnet-mcp) - Background check any company in the world: registration, executives, courts and finances. Remote: `https://statsnet.co/mcp` · Registry: `io.github.usenetstate/statsnet`
 
 ### Building Your Own
 
