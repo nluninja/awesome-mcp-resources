@@ -346,6 +346,7 @@ Model Context Protocol (MCP) is an open protocol that standardizes how applicati
 
 ### Community Servers
 
+- [Agent Payment Node](https://github.com/nuanu-ai/agent-payment-node) - Local macOS CLI and stdio MCP payments with foreground owner approval for signing.
 - [Awesome MCP Servers](https://github.com/punkpeye/awesome-mcp-servers) - Curated list of community servers
 - [MCP Server Registry](https://mcp-servers.org) - Searchable registry of public servers
 - Community Discord for sharing and discovering servers
